@@ -1,11 +1,8 @@
-# Crea una función que sea capaz de detectar si existe un viernes 13 en el mes y el año indicados.
-# La función recibirá el mes y el año y retornará verdadero o falso.
- 
 import datetime
 
-def MetodoMain():
-    ano = int(input("Ingrese el año (1-9999): "))
-    mes = int(input("Ingrese el mes (1-12): "))
+def metodo_main():
+    ano = int(input("Ingrese el año : "))
+    mes = int(input("Ingrese el mes : "))
 
     comprobador = Viernes13(ano, mes)
 
@@ -14,16 +11,21 @@ def MetodoMain():
     else:
         print(f"No hay un viernes 13 en {mes}/{ano}.")
 
+
 class Viernes13:
-    #constructor de la clase
+    # Constructor de la clase
     def __init__(self, ano, mes):
         self.ano = ano
         self.mes = mes
 
+    # se valida si el dia 13 cae viernes
     def es_viernes_13(self):
-        if mes >= 1 and mes <= 12 and ano >= 1 and ano <= 9999:
+        if 1 <= self.mes <= 12 and 1 <= self.ano <= 9999:
             fecha = datetime.date(self.ano, self.mes, 13)
-            return fecha.weekday() == 4
+            return fecha.weekday() == 4  # la funcion weekday es un arreglo de los dias de la semana, donde el dia 4 es viernes
         else:
-            return false
+            return False  
 
+# Llamar a la función principal
+if __name__ == "__main__":
+    metodo_main()
