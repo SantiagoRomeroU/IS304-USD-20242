@@ -11,9 +11,9 @@ def metodo_main():
     comprobador = Viernes13(ano, mes)
 
     if comprobador.es_viernes_13():
-        print(f"Sí hay un viernes 13 en {mes}/{ano}!")
+        print(f"VERDADERO")
     else:
-        print(f"No hay un viernes 13 en {mes}/{ano}.")
+        print(f"FALSO")
 
 
 class Viernes13:
@@ -25,7 +25,7 @@ class Viernes13:
     # se valida si el dia 13 cae viernes
     def es_viernes_13(self):
         if 1 <= self.mes <= 12 and 1 <= self.ano <= 9999:
-            fecha = datetime.date(self.ano, self.mes, 13)
+            fecha = datetime.date(self.ano, self.mes, 13) #
             return fecha.weekday() == 4  # la funcion weekday es un arreglo de los dias de la semana, donde el dia 4 es viernes
         else:
             return False  
